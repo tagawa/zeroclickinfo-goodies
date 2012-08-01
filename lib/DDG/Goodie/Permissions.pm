@@ -16,6 +16,12 @@ my %modes = (
     2 => "write only",
     1 => "execute only",
     0 => "none",
+
+    "r" => "read",
+    "w" => "write",
+    "x" => "execute",
+    "s" => "setuid",
+    "t" => "sticky",
 );
 
 my %special_modes = (
@@ -25,20 +31,43 @@ my %special_modes = (
     '0' => 'none',
 );
 
-handle query => sub { 
-    return unless /^(?:chmod|permissions?) (\d{3,4})$/;
+my %groups = (
+    'u' => 'user',
+    'g' => 'group',
+    'o' => 'others',
+    'a' => 'all',
+);
+
+my %actions = (
+    '-' => 'remove',
+    '+' => 'give',
+    '=' => 'set',
+);
+
+handle query_lc => sub { 
+    return unless /^(?:chmod|permissions?) (\d{3,4}|[ugoa]{0,3}?[-\+=][rwxst]{0,6})(.*)?$/;
+    my $match = $1;
     my $text = '';
-    for (my $i = 0; $i < length $1; $i++) {
-        my $mode = substr ($1, $i, 1);
-        if (length $1 == 4) {
-            $text .= "Special mode: $special_modes{$mode}\n" if $i == 0;
-            $text .= "Owner may $modes{$mode}\n" if $i == 1;
-            $text .= "Group may $modes{$mode}\n" if $i == 2;
-            $text .= "Others may $modes{$mode}\n" if $i == 3;
-        } else {
-            $text .= "Owner may $modes{$mode}\n" if $i == 0;
-            $text .= "Group may $modes{$mode}\n" if $i == 1;
-            $text .= "Others may $modes{$mode}\n" if $i == 2;
+    if ($match =~ m/[-\+=]/) {
+        my ($group, $action, $permissions, $leftovers) =
+            $match =~ /([ugoa]{0,3}?)([-\+=])([rwxXst]{0,6})(.*)?/;
+        $text .= "$actions{$action} "
+               . (join ", ", map {$groups{$_}} split //, $group) . " "
+               . (join "", map {$modes{$_}} split //, $permissions)
+               . $leftovers;
+    } else {
+        for (my $i = 0; $i < length $match; $i++) {
+            my $mode = substr $match, $i, 1;
+            if (length $match == 4) {
+                $text .= "Special mode: $special_modes{$mode}\n" if $i == 0;
+                $text .= "Owner may $modes{$mode}\n" if $i == 1;
+                $text .= "Group may $modes{$mode}\n" if $i == 2;
+                $text .= "Others may $modes{$mode}\n" if $i == 3;
+            } else {
+                $text .= "Owner may $modes{$mode}\n" if $i == 0;
+                $text .= "Group may $modes{$mode}\n" if $i == 1;
+                $text .= "Others may $modes{$mode}\n" if $i == 2;
+            }
         }
     }
     chomp $text;
