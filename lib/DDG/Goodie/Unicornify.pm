@@ -13,14 +13,16 @@ handle remainder => sub {
 	my $link = 'http://unicornify.appspot.com/';
 	if (Email::Valid->address($_)) {
 		s/[\s\t]+//g; # strip whitespace from the remainder, we just need the email address.
-		my $answer = 'This is a unique unicorn for ' . $_ . ':' . "\nLearn more at unicornify.appspot.com"; 
 		my $heading =  $_ . ' (Unicornify)';
-		my $html = 'This is a unique unicorn for ' . $_ . ':'
-		.'<br /><a href="' . unicornify_url(email => $_, size => 128) .'">'
-		.'<img src="'.unicornify_url(email => $_, size => "100").'" style="margin: 10px 0px 10px 20px; border-radius: 8px;" /></a>'
-		. 'Learn more at <a href="'.$link.'">unicornify.appspot.com</a>';
+		my $html = 'This is a unique unicorn for ' . $_ . ':';
 		
-		return $answer, heading => $heading, html => $html;
+		return
+            '',
+            html => $html,
+            heading => $heading,
+            image => unicornify_url(email => $_, size => 128) . ';.jpg',
+            abstract_source =>, "unicornify.appspot.com",
+            abstract_url => "unicornify.appspot.com";
 	}
 	return;
 };
