@@ -1,7 +1,7 @@
 package DDG::Goodie::GUID;
 
 use DDG::Goodie;
-use Data::GUID;
+use Data::UUID::MT;
 
 triggers start => 'globally', 'universally', 'rfc', 'guid', 'uuid';
 
@@ -27,7 +27,8 @@ my %guid = (
 
 handle query_lc => sub {
     return unless exists $guid{$_};
-    if (my $guid = Data::GUID->new) {
+    my $generator = Data::UUID::MT->new;
+    if (my $guid = $generator->create_string) {
         if ($guid{$_}) {
             $guid = lc $guid;
         } else {
