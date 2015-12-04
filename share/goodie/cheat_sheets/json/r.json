@@ -22,155 +22,155 @@
 	],
 	"sections": {
 		"Operators: General": [{
-			"val": "<-",
-			"key": "Assignment operator (suggested)"
+			"key": "<-",
+			"val": "Assignment operator (suggested)"
 		}, {
-			"val": "=",
-			"key": "Assignment operator"
+			"key": "=",
+			"val": "Assignment operator"
 		}, {
-			"val": "#",
-			"key": "Comment"
+			"key": "#",
+			"val": "Comment"
 		}],
 		"Operators: Mathematical": [{
-			"val": "+",
-			"key": "Addition"
+			"key": "+",
+			"val": "Addition"
 		}, {
-			"val": "-",
-			"key": "Subtraction"
+			"key": "-",
+			"val": "Subtraction"
 		}, {
-			"val": "*",
-			"key": "Scalar multiplication"
+			"key": "*",
+			"val": "Scalar multiplication"
 		}, {
-			"val": "/",
-			"key": "Division operator"
+			"key": "/",
+			"val": "Division operator"
 		}, {
-			"val": "^",
-			"key": "Exponentiation"
+			"key": "^",
+			"val": "Exponentiation"
 		}],
 		"Operators: Logical/Relational": [{
-			"val": "==",
-			"key": "Equals"
+			"key": "==",
+			"val": "Equals"
 		}, {
-			"val": "!=",
-			"key": "Not equal"
+			"key": "!=",
+			"val": "Not equal"
 		}, {
-			"val": ">",
-			"key": "Greater than"
+			"key": ">",
+			"val": "Greater than"
 		}, {
-			"val": ">=",
-			"key": "Greater than or equal to"
+			"key": ">=",
+			"val": "Greater than or equal to"
 		}, {
-			"val": "<",
-			"key": "Less than"
+			"key": "<",
+			"val": "Less than"
 		}, {
-			"val": "<=",
-			"key": "Less than or equal to"
+			"key": "<=",
+			"val": "Less than or equal to"
 		}, {
-			"val": "||",
-			"key": "Or"
+			"key": "||",
+			"val": "Or"
 		}, {
-			"val": "|",
-			"key": "Or (use with vectors and matrices)"
+			"key": "|",
+			"val": "Or (use with vectors and matrices)"
 		}, {
-			"val": "&&",
-			"key": "And"
+			"key": "&&",
+			"val": "And"
 		}, {
-			"val": "&",
-			"key": "And (use with vectors and matrices)"
+			"key": "&",
+			"val": "And (use with vectors and matrices)"
 		}, {
-			"val": "%*%",
-			"key": "Matrix multiplication"
+			"key": "%*%",
+			"val": "Matrix multiplication"
 		}],
 		"Functions: General": [{
-			"val": "sqrt",
-			"key": "Square root"
+			"key": "sqrt",
+			"val": "Square root"
 		}, {
-			"val": "exp",
-			"key": "Exponentiation"
+			"key": "exp",
+			"val": "Exponentiation"
 		}, {
-			"val": "log",
-			"key": "Natural log"
+			"key": "log",
+			"val": "Natural log"
 		}, {
-			"val": "sum",
-			"key": "Sum"
+			"key": "sum",
+			"val": "Sum"
 		}, {
-			"val": "prod",
-			"key": "Product"
+			"key": "prod",
+			"val": "Product"
 		}, {
-			"val": "ceiling",
-			"key": "Smallest integer >= number"
+			"key": "ceiling",
+			"val": "Smallest integer >= number"
 		}, {
-			"val": "floor",
-			"key": "Integer part of a number"
+			"key": "floor",
+			"val": "Integer part of a number"
 		}, {
-			"val": "abs",
-			"key": "Absolute value"
+			"key": "abs",
+			"val": "Absolute value"
 		}, {
-			"val": "sin",
-			"key": "Sine"
+			"key": "sin",
+			"val": "Sine"
 		}, {
-			"val": "cos",
-			"key": "Cosine"
+			"key": "cos",
+			"val": "Cosine"
 		}, {
-			"val": "tan",
-			"key": "Tangent"
+			"key": "tan",
+			"val": "Tangent"
 		}, {
-			"val": "table",
-			"key": "Calculate frequency counts of a vector"
+			"key": "table",
+			"val": "Calculate frequency counts of a vector"
 		}],
 		"Functions: Creating vectors": [{
-			"val": "c",
-			"key": "Concatenate"
+			"key": "c",
+			"val": "Concatenate"
 		}, {
-			"val": "seq",
-			"key": "Sequence"
+			"key": "seq",
+			"val": "Sequence"
 		}, {
-			"val": ":",
-			"key": "Integer sequence"
+			"key": ":",
+			"val": "Integer sequence"
 		}, {
-			"val": "rep",
-			"key": "Repeat"
+			"key": "rep",
+			"val": "Repeat"
 		}],
 		"Functions: Combining vectors": [{
-			"val": "cbind",
-			"key": "Column bind"
+			"key": "cbind",
+			"val": "Column bind"
 		}, {
-			"val": "rbind",
-			"key": "Row bind"
+			"key": "rbind",
+			"val": "Row bind"
 		}, {
-			"val": "matrix",
-			"key": "Create matrix"
+			"key": "matrix",
+			"val": "Create matrix"
 		}, {
-			"val": "as.data.frame",
-			"key": "Create dataset from matrix"
+			"key": "as.data.frame",
+			"val": "Create dataset from matrix"
 		}],
 		"Functions: Utility": [{
-			"val": "[ ]",
-			"key": "Subscript operator (vectors)"
+			"key": "\\[ \\]",
+			"val": "Subscript operator (vectors)"
 		}, {
-			"val": "[,]",
-			"key": "Subscript operator (2D)"
+			"key": "[,]",
+			"val": "Subscript operator (2D)"
 		}, {
-			"val": "[,,]",
-			"key": "Subscript operator (3D)"
+			"key": "[,,]",
+			"val": "Subscript operator (3D)"
 		}, {
-			"val": "length",
-			"key": "Length of vector"
+			"key": "length",
+			"val": "Length of vector"
 		}, {
-			"val": "sort",
-			"key": "Sort a vector"
+			"key": "sort",
+			"val": "Sort a vector"
 		}, {
-			"val": "order",
-			"key": "Indices to sort a vector"
+			"key": "order",
+			"val": "Indices to sort a vector"
 		}, {
-			"val": "1,4,7,2,5,8,3,6,9",
-			"key": "Useful for sorting matrices"
+			"key": "1,4,7,2,5,8,3,6,9",
+			"val": "Useful for sorting matrices"
 		}, {
-			"val": "rev",
-			"key": "Reverse order of vector"
+			"key": "rev",
+			"val": "Reverse order of vector"
 		}, {
-			"val": "unique",
-			"key": "Lists unique objects in vector or matrix"
+			"key": "unique",
+			"val": "Lists unique objects in vector or matrix"
 		}]
 	}
 }
